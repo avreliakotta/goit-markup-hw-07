@@ -65,12 +65,13 @@ address {
   overflow: hidden;
 }
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 428px) {
+
+@media screen and (min-width: 480px) {
   .container {
     width: 428px;
   }
@@ -83,6 +84,8 @@ address {
 @media screen and (min-width: 1200px) {
   .container {
     width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -95,12 +98,6 @@ address {
     display: none;
   }
 
-  .container-mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
   .mobile-menu {
     width: 100%;
     height: 100%;
@@ -108,7 +105,7 @@ address {
     top: 0;
     left: 0;
     background-color: var(--invent-color);
-    z-index: 100;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -119,7 +116,13 @@ address {
   .mobile-menu.is-open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
+  .contacts-wrap {
+    position: absolute;
+    bottom: 40px;
+  }
+
   .mobile-menu-close-btn {
     border-radius: 50%;
     border: none;
@@ -138,7 +141,7 @@ address {
   .mobile-menu-close-icon {
     fill: currentColor;
   }
-
+  .mobile-menu-close-btn:hover,
   .mobile-menu-close-btn:focus {
     background-color: var(--branding-color);
     color: var(--invent-color);
@@ -147,9 +150,11 @@ address {
   .mobile-menu .container-mobile {
     padding-left: 40px;
     padding-top: 80px;
-    padding-bottom: 40px;
+
+    height: 796px;
     position: relative;
   }
+
   .menu-toggle {
     border: none;
     padding: 0;
@@ -171,13 +176,11 @@ address {
     color: var(--primary-color);
     transition: color var(--transition-duration) var(--transition-time-function);
   }
-  .mobile-item {
+  .mobile-item:not(:last-child) {
     margin-bottom: 40px;
   }
-  .mobile-item:last-child {
-    margin-bottom: 0;
-  }
 
+  .mobile-nav-link:hover,
   .mobile-nav-link:focus {
     color: var(--branding-color);
   }
@@ -205,6 +208,7 @@ address {
     color: var(--secondary-color);
     transition: color var(--transition-duration) var(--transition-time-function);
   }
+  .mobile-mail-link:hover,
   .mobile-mail-link:focus {
     color: var(--accent-color);
   }
@@ -352,6 +356,25 @@ address {
   }
 }
 
+@media screen and (max-width: 427px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subscribe-input {
+    width: 280px;
+  }
+  .mobile-menu .container-mobile {
+    padding-left: 20px;
+  }
+  .mobile-soc-list {
+    gap: 24px;
+  }
+  .mobile-tel-link {
+    font-size: 24px;
+  }
+}
+
 .hero {
   background-color: var(--primary-color);
   padding-top: 112px;
@@ -389,6 +412,9 @@ address {
   background-color: var(--invent-color);
 
   border-bottom: 1px solid var(--rare-color);
+}
+.container-menu {
+  display: flex;
 }
 .logo {
   font-family: "Raleway", sans-serif;
@@ -453,10 +479,7 @@ section {
   .menu-toggle {
     display: none;
   }
-  .container-menu {
-    display: flex;
-    align-items: center;
-  }
+
   .nav-menu {
     display: flex;
     justify-content: center;
@@ -470,6 +493,9 @@ section {
   }
   .contact {
     margin-left: auto;
+  }
+  .container-menu {
+    align-items: center;
   }
   .nav-link {
     display: block;
@@ -492,6 +518,11 @@ section {
     letter-spacing: 0.04em;
 
     color: var(--secondary-color);
+  }
+
+  .benefits-section {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .current::after {
@@ -568,6 +599,9 @@ section {
     column-gap: 24px;
     justify-content: center;
   }
+  .team-item {
+    width: 264px;
+  }
   .customers-item {
     height: 88px;
     width: calc((100% - 48px) / 3);
@@ -578,6 +612,8 @@ section {
     justify-content: center;
     column-gap: 24px;
     row-gap: 72px;
+    margin-left: 108px;
+    margin-right: 108px;
   }
   .subscribe-input {
     width: 264px;
@@ -585,7 +621,7 @@ section {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
-
+    margin-left: 108px;
     gap: 24px;
   }
   .footer-content {

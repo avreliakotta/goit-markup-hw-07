@@ -22,7 +22,7 @@
   </head>
   <body>
     <header class="header-page">
-      <div class="container container-menu container-mobile">
+      <div class="container container-menu">
         <nav class="nav-menu">
           <a href="./index.html" class="logo link"
             >Web<span class="part">Studio</span></a
@@ -60,32 +60,33 @@
         </address>
       </div>
       <!--Mobile-menu-->
-      <div class="mobile-menu js-menu-container is-open" id="mobile-menu">
+      <div class="mobile-menu js-menu-container" id="mobile-menu">
         <div class="container container-mobile">
           <button class="mobile-menu-close-btn js-close-menu" type="button">
             <svg class="mobile-menu-close-icon" width="8" height="8">
               <use href="./images/icons.svg#icon-close-black"></use>
             </svg>
           </button>
-          <nav>
-            <ul class="mobile-nav-list list">
-              <li class="mobile-item">
-                <a href="./index.html" class="mobile-nav-link link current"
-                  >Studio</a
-                >
-              </li>
-              <li class="mobile-item">
-                <a href="./portfolio.html" class="mobile-nav-link link"
-                  >Portfolio</a
-                >
-              </li>
-              <li class="mobile-item">
-                <a href="" class="mobile-nav-link link">Contacts</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="mobile-contacts">
-            <address class="mobile-contact">
+         
+            <nav class="mobile-nav">
+              <ul class="mobile-nav-list list">
+                <li class="mobile-item">
+                  <a href="./index.html" class="mobile-nav-link link"
+                    >Studio</a
+                  >
+                </li>
+                <li class="mobile-item">
+                  <a href="./portfolio.html" class="mobile-nav-link link"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="mobile-item">
+                  <a href="#mobile-contacts" class="mobile-nav-link link current">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="contacts-wrap" id="mobile-contacts">
+            <address class="mobile-contacts">
               <ul class="mobile-contact-list list">
                 <li class="mobile-contact-item">
                   <a href="tel:+110001111111" class="mobile-tel-link link"
@@ -100,39 +101,41 @@
                   >
                 </li>
               </ul>
+              </address>
+              <ul class="mobile-soc-list list">
+                <li class="mobile-soc-item">
+                  <a href="" class="mobile-soc-link link">
+                    <svg class="mobile-soc-icon" width="24" height="24">
+                      <use href="./images/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mobile-soc-item">
+                  <a href="" class="mobile-soc-link link">
+                    <svg class="mobile-soc-icon" width="24" height="24">
+                      <use href="./images/icons.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mobile-soc-item">
+                  <a href="" class="mobile-soc-link link">
+                    <svg class="mobile-soc-icon" width="24" height="24">
+                      <use href="./images/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="mobile-soc-item">
+                  <a href="" class="mobile-soc-link link">
+                    <svg class="mobile-soc-icon" width="24" height="24">
+                      <use href="./images/icons.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </address>
-            <ul class="mobile-soc-list list">
-              <li class="mobile-soc-item">
-                <a href="" class="mobile-soc-link link">
-                  <svg class="mobile-soc-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="mobile-soc-item">
-                <a href="" class="mobile-soc-link link">
-                  <svg class="mobile-soc-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="mobile-soc-item">
-                <a href="" class="mobile-soc-link link">
-                  <svg class="mobile-soc-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="mobile-soc-item">
-                <a href="" class="mobile-soc-link link">
-                  <svg class="mobile-soc-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
           </div>
-        </div>
+        
+      </div>
       </div>
     </header>
     <main>
