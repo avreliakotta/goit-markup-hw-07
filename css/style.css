@@ -36,6 +36,7 @@ p {
 img {
   display: block;
   width: 100%;
+  height: auto;
 }
 input {
   padding: 0;
@@ -105,7 +106,7 @@ address {
     top: 0;
     left: 0;
     background-color: var(--invent-color);
-    z-index: 999;
+    z-index: 100;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -151,7 +152,7 @@ address {
     padding-left: 40px;
     padding-top: 80px;
 
-    height: 796px;
+    height: 100vh;
     position: relative;
   }
 
@@ -273,12 +274,10 @@ address {
     display: none;
   }
 
-  .benefits-item {
+  .benefits-item:not(:last-child) {
     margin-bottom: 72px;
   }
-  .benefits-item:last-child {
-    margin-bottom: 0;
-  }
+
   .about-section {
     display: none;
   }
@@ -428,6 +427,9 @@ address {
 .part {
   color: var(--primary-color);
 }
+.current {
+  color: var(--accent-color);
+}
 section {
   padding-top: 96px;
   padding-bottom: 96px;
@@ -442,11 +444,7 @@ section {
   text-transform: capitalize;
   margin-bottom: 72px;
 }
-.current {
-  position: relative;
-  color: var(--branding-color);
-  display: inline-block;
-}
+
 .text {
   font-weight: 500;
   font-size: 16px;
@@ -458,15 +456,14 @@ section {
 }
 .subtitle {
   text-align: center;
-  font-family: "Roboto";
-  font-style: normal;
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
 
   letter-spacing: 0.02em;
   text-transform: capitalize;
-
+  margin-bottom: 8px;
   color: var(--primary-color);
 }
 
@@ -516,15 +513,23 @@ section {
     line-height: 1.17px;
 
     letter-spacing: 0.04em;
-
+    padding-top: 12px;
+    padding-bottom: 6px;
     color: var(--secondary-color);
+    display: block;
+
+    transition: color var(--transition-duration) var(--transition-time-function);
   }
 
   .benefits-section {
     padding-left: 16px;
     padding-right: 16px;
   }
-
+  .current {
+    position: relative;
+    color: var(--accent-color);
+    display: inline-block;
+  }
   .current::after {
     position: absolute;
     display: flex;
@@ -539,13 +544,7 @@ section {
   .contact {
     font-style: normal;
   }
-  .contact-link {
-    display: block;
 
-    line-height: 1.5;
-    color: var(--secondary-color);
-    transition: color var(--transition-duration) var(--transition-time-function);
-  }
   .contact-link:hover,
   .contact-link:focus {
     color: var(--branding-color);
@@ -602,9 +601,12 @@ section {
   .team-item {
     width: 264px;
   }
+  .customers-container {
+    width: 584px;
+  }
   .customers-item {
     height: 88px;
-    width: calc((100% - 48px) / 3);
+    min-width: calc((100% - 48px) / 3);
   }
   .customers-list {
     display: flex;
@@ -612,8 +614,6 @@ section {
     justify-content: center;
     column-gap: 24px;
     row-gap: 72px;
-    margin-left: 108px;
-    margin-right: 108px;
   }
   .subscribe-input {
     width: 264px;
@@ -621,7 +621,8 @@ section {
   .footer-container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 108px;
+    width: 584px;
+
     gap: 24px;
   }
   .footer-content {
@@ -670,6 +671,12 @@ section {
   .contact-list .contact-item + .contact-item {
     margin-left: 40px;
   }
+  .contact-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
   .hero {
     padding-top: 188px;
     padding-bottom: 188px;
@@ -707,6 +714,7 @@ section {
     margin-bottom: 8px;
   }
   .text {
+    font-weight: 400;
     line-height: 1.5;
   }
   .icon-item {
@@ -746,7 +754,9 @@ section {
 
     gap: 24px;
   }
-
+  .customers-container {
+    width: 1158px;
+  }
   .customers-item {
     width: calc((100% - 120px) / 6);
   }
@@ -762,6 +772,9 @@ section {
   .footer-soc-content {
     margin-left: 120px;
   }
+  .customers-container {
+    width: 1158px;
+  }
   .footer-form-wrap {
     margin-left: auto;
   }
@@ -769,7 +782,7 @@ section {
     justify-content: center;
   }
   .footer-container {
-    padding-left: 0;
+    width: 1158px;
   }
   .modal {
     padding: 72px 24px 24px;
@@ -1152,7 +1165,7 @@ section {
 
   transition: backgound-color var(--transition-duration)
       var(--transition-time-function),
-    color var(--transition-duration), var(--transition-time-function);
+    color var(--transition-duration) var(--transition-time-function);
 }
 
 .modal-close-icon {
