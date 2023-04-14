@@ -103,6 +103,7 @@ address {
     width: 100%;
     height: 100%;
     position: fixed;
+
     top: 0;
     left: 0;
     background-color: var(--invent-color);
@@ -121,7 +122,8 @@ address {
   }
   .contacts-wrap {
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
+    left: 40 px;
   }
 
   .mobile-menu-close-btn {
@@ -134,6 +136,7 @@ address {
     background-color: var(--rare-color);
     right: 19px;
     top: 24px;
+
     color: var(--default-color);
     transition: background-color var(--transition-duration)
         var(--transition-time-function),
@@ -151,9 +154,14 @@ address {
   .mobile-menu .container-mobile {
     padding-left: 40px;
     padding-top: 80px;
+    padding-bottom: 40px;
 
     height: 100vh;
     position: relative;
+  }
+
+  .mobile-nav {
+    min-height: calc(100vh - 192px);
   }
 
   .menu-toggle {
@@ -754,11 +762,9 @@ section {
 
     gap: 24px;
   }
-  .customers-container {
-    width: 1158px;
-  }
+
   .customers-item {
-    width: calc((100% - 120px) / 6);
+    min-width: calc((100% - 120px) / 6);
   }
   .customers-section {
     padding-top: 130px;
@@ -868,13 +874,85 @@ section {
 
 /*---------------------------Portfolio---------------------------*/
 
+/*-----------------Mobile portfolio-----------------------*/
+
+@media screen and (max-width: 767px) {
+  .work-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .filters-list {
+    margin-bottom: 48px;
+  }
+  .filter-button {
+    padding: 8px 16px;
+  }
+  .filters-list {
+    flex-wrap: wrap;
+    row-gap: 16px;
+    column-gap: 24px;
+    justify-content: flex-start;
+  }
+  .card-item:not(:last-child) {
+    margin-bottom: 48px;
+  }
+}
+
+/*-------Tablet portfolio---------*/
+
+@media screen and (min-width: 768px) {
+  .work-section {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+
+  .filter-button {
+    padding: 12px 24px;
+  }
+  .filters-list {
+    justify-content: center;
+  }
+  .works-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -24px;
+    margin-top: -72px;
+  }
+  .works-list > .card-item {
+    flex-basis: calc(100% / 2 - 24px);
+    margin-left: 24px;
+    margin-top: 72px;
+  }
+}
+
+/*-----------Desktop portfolio--------------*/
+
+@media screen and (min-width: 1200px) {
+  .work-section {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+  .filters-list {
+    margin-bottom: 72px;
+  }
+  .works-list {
+    margin-top: -48px;
+  }
+
+  .works-list > .card-item {
+    flex-basis: calc(100% / 3 - 24px);
+    margin-left: 24px;
+    margin-top: 48px;
+  }
+}
+
+/*-------General properties--------*/
+
 .filters-list {
   display: flex;
-  justify-content: center;
-  margin-bottom: 72px;
-}
-.filters-list .filter-imem + .filter-imem {
-  margin-left: 24px;
+
+  margin-bottom: 64px;
+  gap: 24px;
 }
 
 .filter-button {
@@ -889,7 +967,7 @@ section {
   border: 1px solid var(--rare-color);
   border-radius: 4px;
   cursor: pointer;
-  padding: 12px 24px;
+
   transition: background-color var(--transition-duration)
       var(--transition-time-function),
     color var(--transition-duration) var(--transition-time-function),
@@ -905,10 +983,6 @@ section {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.work-section {
-  padding-top: 96px;
-}
-
 .content {
   padding-top: 32px;
   padding-bottom: 32px;
@@ -920,7 +994,10 @@ section {
 .work-content {
   padding-left: 16px;
 }
-
+.card-portfolio-text {
+  margin-bottom: 0;
+}
+/*
 .works-list {
   display: flex;
   flex-wrap: wrap;
@@ -931,7 +1008,7 @@ section {
   flex-basis: calc(100% / 3-24px);
   margin-left: 24px;
   margin-top: 48px;
-}
+}*/
 .work-link {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
