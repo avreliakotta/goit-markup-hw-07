@@ -631,7 +631,7 @@ section {
     flex-wrap: wrap;
     width: 584px;
 
-    gap: 24px;
+    column-gap: 24px;
   }
   .footer-content {
     margin-bottom: 72px;
@@ -783,6 +783,9 @@ section {
   }
   .footer-form-wrap {
     margin-left: auto;
+  }
+  .footer-content {
+    margin-bottom: 0;
   }
   .subscribeform {
     justify-content: center;
